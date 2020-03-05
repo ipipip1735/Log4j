@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" name="two" packages="mine">
+<!--<Configuration status="debug" strict="true" name="XMLConfigTest" packages="mine">-->
+    <Properties>
+        <Property name="xxx">aa</Property>
+    </Properties>
+    <Appenders>
+        <Appender type="Console" name="STDOUT">
+<!--            <Layout type="PatternLayout" pattern="${env:PATH}"/>-->
+<!--            <Layout type="PatternLayout" pattern="${ctx:one}"/>-->
+<!--            <Layout type="PatternLayout" pattern="${bundle:msg:age}"/>-->
+<!--            <Layout type="PatternLayout" pattern="${date:yy-MM-dd HH:mm:ss}"/>-->
+<!--            <Layout type="PatternLayout" pattern="${sys:hhh}"/>-->
+<!--            <Layout type="PatternLayout" pattern="${map:0}"/>-->
+            <Layout type="PatternLayout" pattern="${olu:kkk}"/>
+        </Appender>
+    </Appenders>
+
+
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+        <Logger name="${xxx}" level="INFO"/>
+<!--        <Logger name="$${xxx}" level="ERROR"/>-->
+    </Loggers>
+
+</Configuration>
+

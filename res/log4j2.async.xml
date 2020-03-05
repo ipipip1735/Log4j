@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" name="XMLConfigTest" packages="mine">
+<!--<Configuration status="debug" strict="true" name="XMLConfigTest" packages="mine">-->
+
+    <Appenders>
+        <Appender type="Console" name="STDOUT">
+            <Layout type="PatternLayout" pattern="[%p] - %t - %m%n"/>
+        </Appender>
+        <RandomAccessFile name="RandomAccessFile" fileName="res/async.log">
+            <Layout type="PatternLayout" pattern="%d [%p] - %t - %m%n"/>
+        </RandomAccessFile>
+        <Appender name="Async" type="Async">
+<!--            <AppenderRef ref="STDOUT"/>-->
+            <AppenderRef ref="RandomAccessFile"/>
+<!--            <LinkedTransferQueue/>-->
+<!--            <BQF/>-->
+        </Appender>
+    </Appenders>
+
+
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+        <AsyncLogger name="async" additivity="false" includeLocation="true">
+            <AppenderRef ref="RandomAccessFile"/>
+        </AsyncLogger>
+
+<!--        <AsyncRoot level="ALL">-->
+<!--            <AppenderRef ref="STDOUT"/>-->
+<!--        </AsyncRoot>-->
+<!--        <Logger name="async" additivity="false">-->
+<!--            <AppenderRef ref="RandomAccessFile"/>-->
+<!--        </Logger>-->
+
+        <Logger name="asyncAppender" additivity="false" includeLocation="true">
+            <AppenderRef ref="Async"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>

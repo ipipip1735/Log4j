@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" name="two" packages="mine">
+<!--<Configuration status="debug" strict="true" name="XMLConfigTest" packages="mine">-->
+
+<!--    <Filter type="ThresholdFilter" level="info"/>-->
+    <Appenders>
+        <Appender type="Console" name="STDOUT">
+            <Layout type="PatternLayout" pattern="%ex"/>
+        </Appender>
+    </Appenders>
+
+
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+        <Logger name="xxx">
+            <AppenderRef ref="STDOUT"/>
+<!--            <Filter type="ThresholdFilter" level="info"/>-->
+        </Logger>
+    </Loggers>
+
+</Configuration>

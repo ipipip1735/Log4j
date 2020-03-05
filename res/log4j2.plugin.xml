@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" name="two" packages="mine">
+    <!--<Configuration status="debug" strict="true" name="XMLConfigTest" packages="mine">-->
+    <OOO aaa="uuu">
+        <ttt/>
+        <mimi type="ttt"/>
+    </OOO>
+</Configuration>
