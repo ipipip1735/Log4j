@@ -226,7 +226,8 @@ public class Log4jTwo {
 
 //        Logger logger = LogManager.getRootLogger();
         Logger logger = LogManager .getLogger("async");
-//        Logger logger = LogManager .getLogger("asyncAppender");
+//        Logger logger = LogManager .getLogger("asyncAppender");//使用异步追加器
+//        Logger logger = LogManager .getLogger("xxx");
         logger.info("mmm");
 
 

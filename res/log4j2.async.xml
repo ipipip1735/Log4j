@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration strict="true" name="XMLConfigTest" packages="mine">
-<!--<Configuration status="debug" strict="true" name="XMLConfigTest" packages="mine">-->
+<!--<Configuration status="trace" strict="true" name="XMLConfigTest" packages="mine">-->
 
     <Appenders>
         <Appender type="Console" name="STDOUT">
@@ -18,21 +18,36 @@
     </Appenders>
 
 
-    <Loggers>
-        <Root level="ALL">
-            <AppenderRef ref="STDOUT"/>
-        </Root>
-        <AsyncLogger name="async" additivity="false" includeLocation="true">
-            <AppenderRef ref="RandomAccessFile"/>
-        </AsyncLogger>
-
-<!--        <AsyncRoot level="ALL">-->
+<!--    <Loggers>-->
+<!--        <Root level="ALL">-->
 <!--            <AppenderRef ref="STDOUT"/>-->
-<!--        </AsyncRoot>-->
-<!--        <Logger name="async" additivity="false">-->
+<!--        </Root>-->
+<!--        -->
+<!--        &lt;!&ndash;异步Logger&ndash;&gt;-->
+<!--        <AsyncLogger name="async" additivity="false" includeLocation="true">-->
 <!--            <AppenderRef ref="RandomAccessFile"/>-->
-<!--        </Logger>-->
+<!--        </AsyncLogger>-->
 
+<!--        &lt;!&ndash;普通Logger，但使用异步追加器&ndash;&gt;-->
+<!--        <Logger name="asyncAppender" additivity="false" includeLocation="true">-->
+<!--            <AppenderRef ref="Async"/>-->
+<!--        </Logger>-->
+<!--    </Loggers>-->
+
+
+
+    <Loggers>
+        <!--根Logger为异步Logger，子Logger都默认为异步Logger，除非特别指定-->
+        <AsyncRoot level="ALL">
+            <AppenderRef ref="STDOUT"/>
+        </AsyncRoot>
+
+        <!--普通Logger-->
+        <Logger name="async" additivity="false">
+            <AppenderRef ref="RandomAccessFile"/>
+        </Logger>
+
+        <!--普通Logger，但使用异步追加器-->
         <Logger name="asyncAppender" additivity="false" includeLocation="true">
             <AppenderRef ref="Async"/>
         </Logger>
