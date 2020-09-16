@@ -50,7 +50,7 @@ public class Log4jTwo {
 //        log4jTwo.lookup();
 
 //        log4jTwo.loggerContext();
-        log4jTwo.async();
+//        log4jTwo.async();
 //        log4jTwo.plugin();
 
 //        log4jTwo.util();
