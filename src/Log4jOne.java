@@ -11,14 +11,14 @@ public class Log4jOne {
     public static void main(String[] args) {
         Log4jOne log4jOne = new Log4jOne();
 
-//        log4jOne.log();
+        log4jOne.log();
 //        log4jOne.inherit();//继承
 //        log4jOne.appender();//追加器
 //        log4jOne.layout();//布局
 //        log4jOne.level();//日志级别
 //        log4jOne.info(Logger.getLogger(""));//打印Logger信息
 //        log4jOne.config();//配置
-        log4jOne.logManager();
+//        log4jOne.logManager();
 
 
     }
@@ -196,15 +196,16 @@ public class Log4jOne {
 
     private void log() {
 
-        Logger logger = Logger.getLogger("");
-        logger.setLevel(Level.ALL);
+        Logger logger = Logger.getRootLogger();//获取根Logger
+//        Logger logger = Logger.getLogger("");//获取空Logger
+//        logger.setLevel(Level.ALL);
 
-        Appender appender = new ConsoleAppender(new SimpleLayout());
-        logger.addAppender(appender);//设置追加器
-//        info(logger);//打印信息
+//        Appender appender = new ConsoleAppender(new SimpleLayout());
+//        logger.addAppender(appender);//设置追加器
+        info(logger);//打印信息
 
 
-        //国家化日志
+        //国际化日志
 //        logger.setResourceBundle(ResourceBundle.getBundle("msg"));
 //        logger.setResourceBundle(ResourceBundle.getBundle("msg", Locale.forLanguageTag("xx-YY")));
 //        logger.l7dlog(Level.ALL, "one", new Object[]{"11", "222"}, null);
